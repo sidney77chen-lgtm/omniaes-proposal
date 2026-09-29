@@ -75,18 +75,26 @@
   .cover__tagline { margin: 12px 0 0; font-family: var(--font-en); font-size: 32px; line-height: 1.25; color: var(--primary); }
   .cover__meta { margin: 24px 0 0; font-size: 14px; color: var(--ink-2); }
   .cover__kv { position: relative; margin-top: 56px; border-radius: 8px; overflow: hidden; }
-  /* 前往網站：疊在 KV 圖右下角。實心白底，確保在照片任何亮度上都讀得到 */
+  /* 2026-09-29 Sidney：KV 照片疊 85% 黑色遮罩，「前往網站」按鈕置中 */
+  .cover__kv::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+  }
   .cover__go {
     position: absolute;
-    right: 24px; bottom: 24px;
+    top: 50%; left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
     display: inline-flex; align-items: center; gap: 8px;
-    height: 52px; padding: 0 24px;
+    height: 56px; padding: 0 32px;
     border-radius: 6px;
     background: var(--white);
     color: var(--ink);
-    font-size: 16px; font-weight: 500;
+    font-size: 18px; font-weight: 500;
     text-decoration: none;
-    box-shadow: 0 6px 20px rgba(37, 54, 62, 0.25);
+    white-space: nowrap;
     transition: background-color 200ms ease, color 200ms ease;
   }
   .cover__go svg { width: 16px; height: 16px; }
@@ -190,7 +198,7 @@
     .cover { padding-top: 56px; }
     .cover h1 { font-size: 32px; }
     .cover__tagline { font-size: 24px; }
-    .cover__go { right: 12px; bottom: 12px; height: 44px; padding: 0 16px; font-size: 14px; }
+    .cover__go { height: 48px; padding: 0 24px; font-size: 16px; }
     .section { padding: 80px 0; }
     .section__head { grid-template-columns: 1fr; gap: 8px; }
     .section__num { font-size: 32px; }
