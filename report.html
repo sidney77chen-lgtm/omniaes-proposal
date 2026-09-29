@@ -75,11 +75,11 @@
   .cover__tagline { margin: 12px 0 0; font-family: var(--font-en); font-size: 32px; line-height: 1.25; color: var(--primary); }
   .cover__meta { margin: 24px 0 0; font-size: 14px; color: var(--ink-2); }
   .cover__kv { position: relative; margin-top: 56px; border-radius: 8px; overflow: hidden; }
-  /* 2026-09-29 Sidney：KV 照片疊 85% 黑色遮罩，「前往網站」按鈕置中 */
+  /* 2026-09-29 Sidney：KV 照片疊 45% 黑色遮罩（原 85%），「前往網站」按鈕置中 */
   .cover__kv::after {
     content: "";
     position: absolute; inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.45);
     pointer-events: none;
   }
   .cover__go {
