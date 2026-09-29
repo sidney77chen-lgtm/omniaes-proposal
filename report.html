@@ -15,13 +15,15 @@
   :root {
     --primary: #58453E;
     --primary-80: #796A65;
+    --primary-90: #695851; /* 小字在 #EEECEC 底上用這階，#796A65 只有 4.39:1 */
     --secondary: #A5BBC6;
     --secondary-10: #F6F8F9;
     --secondary-40: #DBE4E8;
     --ink: #2D2B2A;
     --ink-2: #5B5B5B;
     --liner: #BEBEBE;
-    --bg: #EBEBEB;
+    --bg: #EEECEC; /* 2026-09-29 Sidney：報告底色改用主色 10% 階 */
+    --line-soft: #DEDAD8;
     --white: #FFFFFF;
     --font-tc: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
     --font-en: "Arsenal", var(--font-tc);
@@ -33,7 +35,7 @@
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--white);
+    background: var(--bg);
     color: var(--ink);
     font-family: var(--font-tc);
     font-size: 16px;
@@ -48,10 +50,10 @@
   /* ---------- 頂部列 ---------- */
   .topbar {
     position: sticky; top: 0; z-index: 10;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(238, 236, 236, 0.94);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--bg);
+    border-bottom: 1px solid var(--line-soft);
   }
   .topbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 64px; }
   .topbar__brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-2); }
@@ -69,7 +71,7 @@
     font-size: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--primary-80);
+    color: var(--primary-90);
   }
   .cover h1 { margin: 16px 0 0; font-size: 48px; font-weight: 300; line-height: 1.25; }
   .cover__tagline { margin: 12px 0 0; font-family: var(--font-en); font-size: 32px; line-height: 1.25; color: var(--primary); }
@@ -128,7 +130,7 @@
   .flow { margin: 40px 0 0; padding: 0; list-style: none; counter-reset: flow; }
   .flow li { counter-increment: flow; display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 16px 0; border-top: 1px solid var(--liner); }
   .flow li:last-child { border-bottom: 1px solid var(--liner); }
-  .flow li::before { content: counter(flow, decimal-leading-zero); font-family: var(--font-en); font-size: 18px; color: var(--primary-80); line-height: 1.6; }
+  .flow li::before { content: counter(flow, decimal-leading-zero); font-family: var(--font-en); font-size: 18px; color: var(--primary-90); line-height: 1.6; }
   .flow b { display: block; font-weight: 500; }
   .flow span { font-size: 14px; color: var(--ink-2); }
 
@@ -140,7 +142,7 @@
   /* 配圖一律 16:9，從原始截圖裁切，不做拉伸 */
   .style-item__img { border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; }
   .style-item__img img { width: 100%; height: 100%; object-fit: cover; }
-  .style-item__en { margin: 0; font-family: var(--font-en); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-80); }
+  .style-item__en { margin: 0; font-family: var(--font-en); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-90); }
   .style-item h3 { margin: 8px 0 0; font-size: 24px; font-weight: 500; line-height: 1.5; }
   .style-item p { margin: 16px 0 0; }
   .points { margin: 20px 0 0; padding: 0; list-style: none; }
@@ -177,7 +179,46 @@
   .ramp__steps { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-top: 6px; font-family: var(--font-en); font-size: 12px; color: var(--ink-2); text-align: center; }
   .ramp__note { margin: 12px 0 0; font-size: 14px; color: var(--ink-2); }
 
-  .footer { padding: 40px 0; background: var(--bg); font-size: 14px; color: var(--ink-2); }
+  /* 媒材調整說明：與色階同區，用細框白底和前面的色票資訊分開 */
+  .callout {
+    margin-top: 40px;
+    padding: 28px 32px;
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    background: var(--white);
+  }
+  .callout p { margin: 0; font-size: 16px; line-height: 1.85; }
+  .callout p + p { margin-top: 12px; }
+  .callout__title { font-size: 18px !important; font-weight: 500; color: var(--primary); }
+  .callout__foot {
+    margin-top: 20px !important;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 14px !important;
+    color: var(--ink-2);
+  }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; letter-spacing: 0.02em; }
+
+  /* 05 影像規範 */
+  .imgrule { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; }
+  .imgrule h3 { margin: 8px 0 0; font-size: 24px; font-weight: 500; line-height: 1.5; }
+  .imgrule article > p:not(.eyebrow) { margin: 16px 0 0; }
+  .spec { margin-top: 24px; border-top: 1px solid var(--liner); }
+  .spec div { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--liner); font-size: 14px; line-height: 1.75; }
+  .spec b { font-weight: 500; color: var(--primary); }
+  .spec span { color: var(--ink-2); }
+
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+  .rules > div { padding: 28px 32px; border: 1px solid var(--line-soft); border-radius: 8px; background: var(--white); }
+  .rules h4 { margin: 0; font-size: 18px; font-weight: 500; }
+  .rules__do h4 { color: var(--primary); }
+  .rules ul { margin: 16px 0 0; padding: 0; list-style: none; }
+  .rules li { position: relative; padding: 8px 0 8px 28px; border-top: 1px solid var(--line-soft); font-size: 16px; line-height: 1.6; }
+  .rules li::before { position: absolute; left: 2px; top: 8px; font-size: 14px; line-height: 1.8; }
+  .rules__do li::before { content: "✓"; color: var(--primary); }
+  .rules__dont li::before { content: "✕"; color: var(--ink-2); }
+
+  .footer { padding: 40px 0; background: var(--bg); border-top: 1px solid var(--line-soft); font-size: 14px; color: var(--ink-2); }
   .footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
   .footer a { color: var(--ink-2); }
 
@@ -191,6 +232,7 @@
     .strategy article, .strategy article:first-child, .strategy article:last-child { padding: 0; }
     .strategy article + article { border-left: 0; border-top: 1px solid var(--liner); padding-top: 40px; }
     .palette { grid-template-columns: repeat(2, 1fr); }
+    .imgrule, .rules { grid-template-columns: 1fr; gap: 32px; }
   }
   @media (max-width: 600px) {
     :root { --gutter: 16px; }
@@ -206,6 +248,8 @@
     .palette { grid-template-columns: 1fr; }
     .swatch__chip { height: 96px; }
     .ramp__steps { font-size: 11px; }
+    .callout { padding: 20px 16px; }
+    .rules > div { padding: 20px 16px; }
   }
 </style>
 </head>
@@ -222,6 +266,7 @@
       <a href="#style">設計風格說明</a>
       <a href="#strategy">設計策略</a>
       <a href="#color">網站色彩規劃</a>
+      <a href="#imagery">影像規範</a>
     </nav>
   </div>
 </header>
@@ -433,8 +478,80 @@
             <div style="background:#F6F8F9;border:1px solid #DBE4E8"></div><div style="background:#EDF1F4"></div><div style="background:#E4EBEE"></div><div style="background:#DBE4E8"></div><div style="background:#D2DDE2"></div><div style="background:#C9D6DD"></div><div style="background:#C0CFD7"></div><div style="background:#B7C9D1"></div><div style="background:#AEC2CC"></div><div style="background:#A5BBC6"></div>
           </div>
           <div class="ramp__steps" aria-hidden="true"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div>
-          <p class="ramp__note">醫美小學堂的區塊底色使用輔助色 10%（#F6F8F9），與頁尾的霧灰 #EBEBEB 形成一冷一中性的層次。</p>
+          <p class="ramp__note">醫美小學堂的區塊底色使用輔助色 10%（#F6F8F9），與頁尾的霧灰 #EEECEC 形成一冷一中性的層次。</p>
+
+          <div class="callout">
+            <p class="callout__title">關於背景色的媒材調整</p>
+            <p>品牌識別規範的底色為柔米 <span class="mono">#F5F2E5</span>（色相 49°、彩度 6.5%）。該色為印刷媒材所訂，非塗佈紙會吸收部分黃調；但在背光的 sRGB 螢幕上鋪成整頁大面積時，同樣的黃會被放大，與品牌希望傳達的理性感有落差。</p>
+            <p>因此網站端將此色往中性方向調整，採用主色階 10% 的 <span class="mono">#EEECEC</span>。此值彩度僅 0.8%，視覺上已屬中性，但因由品牌棕衍生而來，與主色 <span class="mono">#58453E</span> 並置時不會產生冷灰與暖棕互斥的違和感，同時仍保留在既有 token 系統之內，不需引入系統外的新色。</p>
+            <p class="callout__foot">建議一併回寫至 design token，新增 <span class="mono">color/dark/bg-web</span> 並註明其為螢幕媒材對應色與調整理由，避免品牌手冊與網站實作出現無紀錄的差異。</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 影像規範 ========== -->
+  <section class="section" id="imagery" aria-labelledby="imagery-title">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__num">05</div>
+        <div>
+          <p class="eyebrow">Image Guidelines</p>
+          <h2 id="imagery-title">影像規範：文章上稿與選圖原則</h2>
+        </div>
+      </div>
+
+      <div class="imgrule">
+        <article>
+          <p class="eyebrow">Environment &amp; Still Life</p>
+          <h3>環境與靜物：偏冷至中性</h3>
+          <p>診間空間、器材、保養品等靜物，維持偏冷至中性的色調，呼應輔助色霧藍灰所建立的冷靜與透明感，也讓版面在大量留白下保持一致的秩序。</p>
+          <div class="spec">
+            <div><b>色溫</b><span>5200–6000K，單一光源，不混光</span></div>
+            <div><b>飽和度</b><span>低，避免高彩度物件入鏡</span></div>
+            <div><b>光質</b><span>漫射柔光，不打硬光、不製造強烈陰影</span></div>
+          </div>
+        </article>
+        <article>
+          <p class="eyebrow">Skin &amp; Portrait</p>
+          <h3>人物與肌膚：維持自然膚色</h3>
+          <p>人像不做冷調處理。診所的專業訴求即是皮膚狀態，統一冷調會使膚色發灰、發青，等同於在官網上呈現治療前的氣色，並且會限縮可用的模特兒膚色範圍。品牌識別中代表理性的影像，本身即為暖膚色置於中性底上。</p>
+          <div class="spec">
+            <div><b>膚色</b><span>維持自然，高光可帶暖，整體飽和度壓低</span></div>
+            <div><b>修圖</b><span>保留毛孔、雀斑與細紋等真實質地</span></div>
+            <div><b>構圖</b><span>留白充足，人物不置中壓迫，視線不直視鏡頭</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="rules">
+        <div class="rules__do">
+          <h4>共同原則</h4>
+          <ul>
+            <li>單一柔和光源，光線方向一致</li>
+            <li>低對比、低飽和，層次靠明度而非彩度</li>
+            <li>同一頁面內的影像色溫需一致</li>
+            <li>固定裁切比例（16:9 主圖、4:3 卡片圖）</li>
+            <li>統一卡片留白與 8px 圓角</li>
+          </ul>
+        </div>
+        <div class="rules__dont">
+          <h4>明確禁止</h4>
+          <ul>
+            <li>療程前後對比圖</li>
+            <li>強力磨皮、美顏濾鏡、液化變形</li>
+            <li>HDR、過度銳化、高對比修圖</li>
+            <li>彩色濾鏡與彩色背景紙</li>
+            <li>拼貼、外框、文字浮水印與促銷標籤</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p class="callout__title">為什麼不建議「一律冷調」</p>
+        <p>高質感並非來自冷色，而是來自色溫一致、光源乾淨與低飽和度。將全站影像統一冷調處理，會使肌膚失去氣色，並使品牌三個關鍵字中的「溫暖」在視覺層失去載體——背景已為中性、主色棕僅出現於文字與小面積元件，若影像再全面冷調，全站將不存在任何暖度。</p>
+        <p class="callout__foot">另建議：醫美小學堂的文章圖多由診所同仁長期自行上稿，不會每張皆經設計端確認。建議另行提供一頁式選圖檢查表，搭配三組正確與錯誤對照範例，並以固定裁切比例、統一卡片留白與圓角維持整齊度——此三者對版面一致性的貢獻高於調色，且不需後製技巧。</p>
       </div>
     </div>
   </section>
