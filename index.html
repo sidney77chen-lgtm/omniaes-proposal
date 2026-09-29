@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>OMNIAES 上帝視角診所 ｜ Mind First. Beauty Follows.</title>
+<meta name="description" content="真正的美，建立在清晰與安心的選擇。上帝視角 AI 先幫你整理需求、療程與價格，再安排醫師諮詢。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="./img/kv.jpg" />
+<link rel="stylesheet" href="./css/tokens.css" />
+<link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+<!-- ========== Nav ========== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="#top" aria-label="OMNIAES 上帝視角診所 首頁">
+      <img src="./img/logo.png" alt="OMNIAES" width="154" height="40" />
+    </a>
+    <nav class="nav__links" aria-label="主選單">
+      <a href="#">真實分享</a>
+      <a href="#">問題與療程</a>
+      <a href="#learn">醫美小學堂</a>
+      <a href="#">關於上帝視角</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__btn glass" href="#">預約醫師諮詢</a>
+      <a class="nav__btn glass" href="#">登入</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========== KV：照片 + 光線動態 ========== -->
+  <section class="kv" id="kv" aria-labelledby="kv-title">
+    <img class="kv__photo" src="./img/kv.jpg" alt="" width="1440" height="900" fetchpriority="high" />
+    <div class="kv__dim" aria-hidden="true"></div>
+    <div class="kv__aurora" aria-hidden="true"><div class="kv__aurora-layer"></div></div>
+
+    <div class="container kv__content">
+      <h1 class="kv__title" id="kv-title">
+        <span class="reveal" style="--i:0">Mind First.</span>
+        <span class="reveal" style="--i:1">Beauty Follows.</span>
+      </h1>
+      <p class="kv__sub reveal" style="--i:2"><span>真正的美</span> <span>建立在清晰與安心的選擇</span></p>
+      <div class="kv__actions reveal" style="--i:3">
+        <a class="kv__btn glass" href="#">預約醫師諮詢</a>
+        <!-- 呼吸光暈：參考 CodePen Dennytrumpet/yLXVzma，彩色換成白光＋品牌藍 #A5BBC6。
+             光暈放在外層 wrap 的 ::before，墊在毛玻璃按鈕後面，不會透過半透明按鈕把正面照亮 -->
+        <span class="kv__glow">
+          <a class="kv__btn glass" href="#ai">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c.4 3.9 2.1 5.6 8 8-5.9 2.4-7.6 4.1-8 8-.4-3.9-2.1-5.6-8-8 5.9-2.4 7.6-4.1 8-8z"/></svg>
+            AI 醫美問答
+          </a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 上帝視角 AI ========== -->
+  <section class="ai" id="ai" aria-labelledby="ai-title">
+    <img class="ai__bg" src="./img/section2-bg.jpg" alt="" width="1440" height="900" loading="lazy" />
+    <div class="container">
+
+      <div class="ai__card reveal">
+        <!-- 流動線條動態：移植自 tsi/lite 的 AI consultation 卡片（.ai-orb），2026-09-29 改為 280×280 -->
+        <div class="ai-orb" aria-hidden="true">
+          <canvas class="ai-orb__canvas" width="560" height="560"></canvas>
+        </div>
+        <!-- 2026-09-29 Sidney：標題視覺上隱藏；保留給螢幕閱讀器，也維持 h2 → h3 的大綱不跳級 -->
+        <h2 class="ai__title sr-only" id="ai-title">上帝視角 AI</h2>
+        <!-- 捲動到此區時以打字方式出現。ghost 是隱形的完整文字，先把高度撐好，打字時版面不會跳動 -->
+        <p class="ai__lead typewriter"><span class="sr-only">嗨，想先從哪裡開始了解呢？告訴我你在意的地方，我會一步步了解你的需求，整理適合參考的療程與價格。</span><span class="typewriter__ghost" aria-hidden="true">嗨，想先從哪裡開始了解呢？
+告訴我你在意的地方，我會一步步了解你的需求，整理適合參考的療程與價格。</span><span class="typewriter__out" aria-hidden="true"></span></p>
+
+        <form class="ai__form" id="ai-form">
+          <label class="sr-only" for="ai-input">你在意的部位或問題</label>
+          <div class="ai__field">
+            <input class="ai__input" id="ai-input" type="text" placeholder="請輸入您在意的部位或問題" autocomplete="off" />
+            <button class="ai__send" type="submit" aria-label="送出">
+              <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
+            </button>
+          </div>
+          <ul class="ai__chips" aria-label="常見問題">
+            <li><button class="ai__chip" type="button" aria-pressed="false">法令紋、淚溝等</button></li>
+            <li><button class="ai__chip" type="button" aria-pressed="false">臉部輪廓</button></li>
+            <li><button class="ai__chip" type="button" aria-pressed="false">膚況不好</button></li>
+            <li><button class="ai__chip" type="button" aria-pressed="false">覺得有老化</button></li>
+            <li><button class="ai__chip" type="button" aria-pressed="false">詢問音波拉提</button></li>
+          </ul>
+          <p class="ai__note" id="ai-note" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <ul class="features">
+        <li class="feature reveal" style="--i:0">
+          <svg class="feature__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 30 24.5 11.5M22 9l5 5"/>
+            <path d="M22 9l2.5-2.5 5 5L27 14"/>
+            <path d="M12 5v4M10 7h4M28 20v4M26 22h4M8 14v2M7 15h2"/>
+          </svg>
+          <h3 class="feature__title">探索你的改善方向</h3>
+          <p class="feature__desc">AI 助你分析需求，看見選擇可能性</p>
+        </li>
+        <li class="feature reveal" style="--i:1">
+          <svg class="feature__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="6.5" width="20" height="25" rx="2.5"/>
+            <path d="M13 4v5M18 4v5M23 4v5M12.5 15h11M12.5 20h11M12.5 25h7"/>
+          </svg>
+          <h3 class="feature__title">療程價格，清楚掌握</h3>
+          <p class="feature__desc">先了解方案與預算，再安排醫師諮詢</p>
+        </li>
+        <li class="feature reveal" style="--i:2">
+          <svg class="feature__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 5c-5.5 0-9.5 4-9.5 9 0 2.3.8 3.8.8 5.2 0 1.4-2.3 3.6-2.3 4.6 0 .8 1.5 1 2.3 1.2v3.2c0 1.3 1 2.3 2.3 2.3H15"/>
+            <path d="M18 5v26M18 10h5l2.5-2.5M18 16h8M18 22h5l2.5 2.5"/>
+            <circle cx="26.5" cy="6.5" r="1.3"/><circle cx="27.5" cy="16" r="1.3"/><circle cx="26.5" cy="25.5" r="1.3"/>
+          </svg>
+          <h3 class="feature__title">醫師打造 AI 知識庫</h3>
+          <p class="feature__desc">分析依據皆來自診所專業資料，安心可信</p>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ========== 醫美小學堂：1 則主打影片 + 3 則文章（依 2026-09-29 線框稿） ========== -->
+  <section class="learn" id="learn" aria-labelledby="learn-title">
+    <div class="container">
+      <div class="learn__head reveal">
+        <div>
+          <p class="learn__eyebrow">Insights</p>
+          <h2 class="learn__title" id="learn-title">醫美小學堂</h2>
+        </div>
+        <a class="learn__more" href="#">查看所有文章
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
+        </a>
+      </div>
+
+      <div class="learn__grid">
+        <article class="feature-post reveal">
+          <a class="feature-post__media post__thumb" href="#" aria-label="播放影片：黑眼圈怎麼消？6 種改善方式一次看">
+            <img src="./img/article-darkcircles.jpg" alt="" width="1000" height="750" loading="lazy" decoding="async" />
+            <span class="feature-post__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 6.5v11l9-5.5z"/></svg>
+            </span>
+          </a>
+          <div class="feature-post__foot">
+            <div class="post__body">
+              <ul class="post__tags" aria-label="標籤"><li>臉部鬆弛</li><li>動態皺紋</li></ul>
+              <h3 class="post__title">黑眼圈怎麼消？6 種改善方式一次看</h3>
+            </div>
+            <!-- 2026-09-29 Sidney：先隱藏，要恢復就拿掉 hidden -->
+            <a class="learn__btn learn__btn--sm" href="#" target="_blank" rel="noopener" hidden>前往影片 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg></a>
+          </div>
+        </article>
+
+        <ul class="learn__list">
+          <li class="reveal" style="--i:1">
+            <a class="post post--row" href="#">
+              <div class="post__thumb"><img src="./img/article-acne.jpg" alt="" width="1000" height="857" loading="lazy" decoding="async" /></div>
+              <div class="post__body">
+                <ul class="post__tags" aria-label="標籤"><li>臉部鬆弛</li><li>動態皺紋</li></ul>
+                <h3 class="post__title">尋常性痤瘡是痘痘嗎？成因、治療方法、痘痘藥膏推薦一次看！</h3>
+              </div>
+            </a>
+          </li>
+          <li class="reveal" style="--i:2">
+            <a class="post post--row" href="#">
+              <div class="post__thumb"><img src="./img/article-temple.jpg" alt="" width="1000" height="741" loading="lazy" decoding="async" /></div>
+              <div class="post__body">
+                <ul class="post__tags" aria-label="標籤"><li>臉部鬆弛</li><li>動態皺紋</li></ul>
+                <h3 class="post__title">太陽穴填充怎麼選？玻尿酸 vs 自體脂肪填充全面解析，改善夫妻宮凹陷困擾！</h3>
+              </div>
+            </a>
+          </li>
+          <li class="reveal" style="--i:3">
+            <a class="post post--row" href="#">
+              <div class="post__thumb"><img src="./img/article-ultherapy.jpg" alt="" width="1000" height="750" loading="lazy" decoding="async" /></div>
+              <div class="post__body">
+                <ul class="post__tags" aria-label="標籤"><li>臉部鬆弛</li><li>動態皺紋</li></ul>
+                <h3 class="post__title">音波拉提費用大公開！效果、原理、術後保養全面解析</h3>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <img class="footer__logo" src="./img/footer-logo.png" alt="OMNIAES 上帝視角診所" width="150" height="48" loading="lazy" />
+        <ul class="footer__cats" aria-label="療程類別">
+          <li><a href="#">微整注射</a></li>
+          <li><a href="#">拉提緊緻</a></li>
+          <li><a href="#">雷射光療</a></li>
+          <li><a href="#">除毛療程</a></li>
+          <li><a href="#">體態雕塑</a></li>
+        </ul>
+        <ul class="footer__social" aria-label="社群媒體">
+          <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M18.6 5.6a2.3 2.3 0 0 0-1.6-1.6C15.6 3.6 10 3.6 10 3.6s-5.6 0-7 .4a2.3 2.3 0 0 0-1.6 1.6C1 7 1 10 1 10s0 3 .4 4.4A2.3 2.3 0 0 0 3 16c1.4.4 7 .4 7 .4s5.6 0 7-.4a2.3 2.3 0 0 0 1.6-1.6c.4-1.4.4-4.4.4-4.4s0-3-.4-4.4zM8.2 12.7V7.3L12.9 10l-4.7 2.7z"/></svg></a></li>
+          <li><a href="#" aria-label="LINE"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2C5 2 1 5.3 1 9.3c0 3.6 3.2 6.6 7.5 7.2.3.1.7.2.8.5.1.3.1.6 0 .9l-.1.8c0 .2-.2.9.8.5s5.4-3.2 7.4-5.5C18.8 12.2 19 10.8 19 9.3 19 5.3 15 2 10 2z"/><path d="M5 7.4v3.6h2.3M8.4 7.4V11M9.9 11V7.4l2.4 3.6V7.4M15.3 7.4h-1.9V11h1.9M13.4 9.2h1.9" style="fill:none;stroke:var(--footer-bg)" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" rx="4"/><circle cx="10" cy="10" r="3.4"/><circle cx="14.4" cy="5.6" r=".6" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="#" aria-label="TikTok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M13.6 2h-2.7v11.1a2.4 2.4 0 1 1-2.4-2.4c.2 0 .5 0 .7.1V8a5.1 5.1 0 1 0 4.4 5V7.4a6.3 6.3 0 0 0 3.6 1.1V5.8a3.7 3.7 0 0 1-3.6-3.8z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <ul class="footer__nav" aria-label="網站導覽">
+        <li><a href="#">關於上帝視角</a></li>
+        <li><a href="#">真實分享</a></li>
+        <li><a href="#">問題與療程</a></li>
+        <li><a href="#learn">醫美小學堂</a></li>
+        <li><a href="#">預約醫師諮詢</a></li>
+        <li><a href="#">登入會員中心</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__contact">
+        <a href="tel:0277550922">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 1.8 3.3 2.3c-.8.2-1.4 1-1.2 1.9C3 9 7 13 11.8 13.9c.9.2 1.7-.4 1.9-1.2l.5-2.3-3-1.3-1.4 1.5C8 9.9 6.1 8 5.4 6.2l1.5-1.4-1.3-3z"/><path d="M10 2.5a4 4 0 0 1 3.5 3.5M10 4.8a1.8 1.8 0 0 1 1.3 1.3" stroke-linecap="round"/></svg>
+          02-77550922
+        </a>
+        <span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 14.5s5-4.6 5-8.3a5 5 0 0 0-10 0c0 3.7 5 8.3 5 8.3z"/><circle cx="8" cy="6.2" r="1.8"/></svg>
+          台北市信義區基隆路一段 163 號 13 樓之 3
+        </span>
+      </div>
+      <div class="footer__legal">
+        <a href="#">隱私權政策</a>
+        <span>© 上帝視角診所</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* OMNIAES — design tokens
+   來源：OMNIAES-design-tokens.md（Figma 匯出，2026-09-28）
+   命名直接對應 Figma 變數，改值請回 Figma 同步。 */
+
+:root {
+  /* ---------- Primary ramp（標準色） ---------- */
+  --color-primary:      #58453E;
+  --color-primary-10:   #EEECEC;
+  --color-primary-20:   #DEDAD8;
+  --color-primary-30:   #CDC7C5;
+  --color-primary-40:   #BCB5B2;
+  --color-primary-50:   #ACA29E;
+  --color-primary-60:   #9B8F8B;
+  --color-primary-70:   #8A7D78;
+  --color-primary-80:   #796A65;
+  --color-primary-90:   #695851;
+
+  /* ---------- Secondary ramp（輔助色） ---------- */
+  --color-secondary:    #A5BBC6;
+  --color-secondary-10: #F6F8F9;
+  --color-secondary-20: #EDF1F4;
+  --color-secondary-30: #E4EBEE;
+  --color-secondary-40: #DBE4E8;
+  --color-secondary-50: #D2DDE2;
+  --color-secondary-60: #C9D6DD;
+  --color-secondary-70: #C0CFD7;
+  --color-secondary-80: #B7C9D1;
+  --color-secondary-90: #AEC2CC;
+
+  /* ---------- Dark / utility（OMNIAES 預設 mode） ---------- */
+  --color-black:     #2D2B2A;
+  --color-blue:      #25363E;
+  --color-grey:      #949494;
+  --color-dark-grey: #5B5B5B;
+  --color-liner:     #BEBEBE;
+  --color-bg:        #F5F2E5;
+  --color-white:     #FFFFFF;
+
+  /* ---------- Font families ---------- */
+  --font-tc: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-en: "Arsenal", var(--font-tc);
+
+  /* ---------- Font sizes（xs 12 → 11xl 200） ---------- */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-md:   16px;
+  --fs-lg:   18px;
+  --fs-xl:   20px;
+  --fs-2xl:  24px;
+  --fs-3xl:  32px;
+  --fs-4xl:  40px;
+  --fs-5xl:  48px;
+  --fs-6xl:  64px;
+  --fs-7xl:  80px;
+  --fs-8xl:  96px;
+  --fs-9xl:  120px;
+  --fs-10xl: 160px;
+  --fs-11xl: 200px;
+
+  /* Figma 的 letter-spacing 1.5 是百分比 */
+  --tracking: 0.015em;
+
+  /* ---------- Layout（量自 1440 完稿） ---------- */
+  --container: 1280px;
+  --gutter: 80px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* ---------- Hero 標題（Tweaks 可調） ---------- */
+  --hero-title-size: var(--fs-9xl);
+  --hero-title-style: normal;
+
+  /* ---------- Motion（Tweaks 可調） ---------- */
+  --motion-duration: 800ms;
+  --reveal-distance: 40px;
+  --ease: cubic-bezier(0.42, 0, 0.58, 1);
+
+  /* ---------- KV 進場：呼吸感（Tweaks 可調） ----------
+     0ms     照片從 40% 暗漸亮回原亮度，2400ms
+     600ms   Mind First. 淡入上移 48px，1800ms；Beauty Follows. 再晚 400ms
+     2000ms  副標、按鈕依序跟上 */
+  --kv-dim:            0.4;
+  --kv-fade-duration:  2400ms;
+  --title-duration:    1800ms;
+  --title-delay:       600ms;
+  --title-stagger:     400ms;
+  --title-distance:    48px;
+  --ease-breath: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ease-out-quad：均勻移動、輕輕收尾 */
+
+  /* ---------- KV 光線動態（Tweaks 可調） ----------
+     顏色取自 KV 照片本身：輔助色藍灰、陽光暖白、稜鏡炫光的淡粉紫與淡青。 */
+  --aurora-speed:   60s;
+  --aurora-opacity: 0.55;
+  --aurora-blur:    10px;
+  --aurora-angle:   100deg;
+  --aurora-x:       68%;
+  --aurora-y:       0%;
+  --aurora-blend:   screen;
+  --aurora-c1: #A5BBC6;
+  --aurora-c2: #F6E7D2;
+  --aurora-c3: #DBE4E8;
+  --aurora-c4: #E7D8EE;
+  --aurora-c5: #C8E0DE;
+}
