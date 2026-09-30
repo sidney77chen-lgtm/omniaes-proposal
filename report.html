@@ -238,7 +238,7 @@
   .rules li { position: relative; padding: 8px 0 8px 28px; border-top: 1px solid var(--line-soft); font-size: 16px; line-height: 1.6; }
   .rules li::before { position: absolute; left: 2px; top: 8px; font-size: 14px; line-height: 1.8; }
   .rules__do li::before { content: "✓"; color: var(--primary); }
-  .rules__dont li::before { content: "✕"; color: var(--ink-2); }
+  .rules__dont li::before { content: "−"; color: var(--ink-2); } /* 「建議減少」語氣較溫和，用減號而非 ✕ */
 
   /* ---------- 結尾說明 ---------- */
   .closing { max-width: 640px; }
