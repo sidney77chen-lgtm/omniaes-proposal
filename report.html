@@ -6,12 +6,12 @@
 <meta name="robots" content="noindex, nofollow" />
 <meta name="color-scheme" content="light" />
 <title>OMNIAES 上帝視角診所｜品牌官網設計提案 2026.09</title>
-<meta name="description" content="上帝視角診所品牌官網設計提案：設計說明、設計風格說明、設計策略與網站色彩規劃。" />
+<meta name="description" content="上帝視角診所品牌官網設計提案：本次調整說明、設計說明、設計風格說明、設計策略、網站色彩規劃與影像規範。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
-  /* 報告本身也套用 OMNIAES 的 design token，讓客戶看到的提案文件和網站是同一套語言 */
+  /* 報告本身也套用 OMNIAES 的品牌色票與字級，讓客戶看到的提案文件和網站是同一套語言 */
   :root {
     --primary: #58453E;
     --primary-80: #796A65;
@@ -57,7 +57,14 @@
   }
   .topbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 64px; }
   .topbar__brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-2); }
-  .topbar__brand img { width: 125px; height: 40px; }
+  /* 品牌規範的商標為單色；原檔是金銅漸層，暫以遮罩染成標準色 #58453E，正式版請向品牌端索取單色原始檔 */
+  .topbar__logo {
+    display: block;
+    width: 154px; height: 40px;
+    background: var(--primary);
+    -webkit-mask: var(--logo) no-repeat 0 0 / contain;
+    mask: var(--logo) no-repeat 0 0 / contain;
+  }
   .topbar__brand span { padding-left: 12px; border-left: 1px solid var(--liner); }
   .topbar__nav { display: flex; gap: 24px; font-size: 14px; }
   .topbar__nav a { text-decoration: none; color: var(--ink-2); padding: 4px 0; border-bottom: 1px solid transparent; }
@@ -145,10 +152,6 @@
   .style-item__en { margin: 0; font-family: var(--font-en); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-90); }
   .style-item h3 { margin: 8px 0 0; font-size: 24px; font-weight: 500; line-height: 1.5; }
   .style-item p { margin: 16px 0 0; }
-  .points { margin: 20px 0 0; padding: 0; list-style: none; }
-  .points li { position: relative; padding-left: 20px; font-size: 14px; color: var(--ink-2); line-height: 1.75; }
-  .points li + li { margin-top: 6px; }
-  .points li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); }
 
   /* 03 設計策略 */
   .strategy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; }
@@ -179,6 +182,17 @@
   .ramp__steps { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-top: 6px; font-family: var(--font-en); font-size: 12px; color: var(--ink-2); text-align: center; }
   .ramp__note { margin: 12px 0 0; font-size: 14px; color: var(--ink-2); }
 
+  /* ---------- 這次調整了什麼 ---------- */
+  .revision { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 56px; }
+  .revision article { padding: 0 40px; }
+  .revision article:first-child { padding-left: 0; }
+  .revision article:last-child { padding-right: 0; }
+  .revision article + article { border-left: 1px solid var(--liner); }
+  .revision h3 { margin: 0 0 16px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--primary); }
+  .revision p { margin: 0 0 14px; }
+  .revision p:last-child { margin-bottom: 0; }
+  .revision .spec { margin: 0 0 18px; }
+
   /* 媒材調整說明：與色階同區，用細框白底和前面的色票資訊分開 */
   .callout {
     margin-top: 40px;
@@ -197,7 +211,6 @@
     font-size: 14px !important;
     color: var(--ink-2);
   }
-  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; letter-spacing: 0.02em; }
 
   /* 05 影像規範 */
   .imgrule { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; }
@@ -218,6 +231,12 @@
   .rules__do li::before { content: "✓"; color: var(--primary); }
   .rules__dont li::before { content: "✕"; color: var(--ink-2); }
 
+  /* ---------- 結尾說明 ---------- */
+  .closing { max-width: 640px; }
+  .closing h2 { margin: 0 0 24px; font-size: 24px; font-weight: 500; }
+  .closing p { margin: 0 0 14px; }
+  .closing p:last-child { margin-bottom: 0; }
+
   .footer { padding: 40px 0; background: var(--bg); border-top: 1px solid var(--line-soft); font-size: 14px; color: var(--ink-2); }
   .footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
   .footer a { color: var(--ink-2); }
@@ -233,6 +252,9 @@
     .strategy article + article { border-left: 0; border-top: 1px solid var(--liner); padding-top: 40px; }
     .palette { grid-template-columns: repeat(2, 1fr); }
     .imgrule, .rules { grid-template-columns: 1fr; gap: 32px; }
+    .revision { grid-template-columns: 1fr; gap: 40px; }
+    .revision article, .revision article:first-child, .revision article:last-child { padding: 0; }
+    .revision article + article { border-left: 0; border-top: 1px solid var(--liner); padding-top: 40px; }
   }
   @media (max-width: 600px) {
     :root { --gutter: 16px; }
@@ -258,10 +280,11 @@
 <header class="topbar">
   <div class="container topbar__inner">
     <div class="topbar__brand">
-      <img src="data:image/png;base64,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" alt="OMNIAES 上帝視角診所" width="125" height="40" />
+      <span class="topbar__logo" role="img" aria-label="OMNIAES 上帝視角診所" style="--logo:url(data:image/png;base64,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)"></span>
       <span>品牌官網設計提案</span>
     </div>
     <nav class="topbar__nav" aria-label="提案章節">
+      <a href="#revision">這次調整</a>
       <a href="#concept">設計說明</a>
       <a href="#style">設計風格說明</a>
       <a href="#strategy">設計策略</a>
@@ -285,6 +308,38 @@
         <a class="cover__go" href="https://sidney77chen-lgtm.github.io/omniaes-proposal/" target="_blank" rel="noopener">前往網站
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 00 這次調整了什麼 ========== -->
+  <section class="section section--tint" id="revision" aria-labelledby="revision-title">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__num">00</div>
+        <div>
+          <p class="eyebrow">What Changed</p>
+          <h2 id="revision-title">這次調整了什麼</h2>
+        </div>
+      </div>
+
+      <div class="revision">
+        <article>
+          <h3>關於配色</h3>
+          <p>上次醫師提到整體沒有貼到品牌配色，我們重新檢查了首屏。首屏照片佔了畫面約六成，第一眼的印象幾乎都來自它，所以這裡先說明照片和品牌色的關係：人物的肌膚與髮色，呼應的是品牌的暖木棕；背後互映的天空，呼應的是品牌的霧藍灰。照片之外的底色、文字、按鈕與光線，都只使用品牌色票。</p>
+          <p>也順便說明這組配色的由來。品牌的兩個主要顏色其實都有出處：<b>暖木棕來自人，是肌膚與髮的暖調；霧藍灰來自天空。</b>首屏的畫面就是一個人仰頭迎向天光，顏色和影像講的是同一件事。這也是我們沒有另外加顏色進來的原因，配色本身就是品牌故事的一部分。</p>
+        </article>
+
+        <article>
+          <h3>關於科技感</h3>
+          <p>科技感不是靠顏色做出來的，是靠三件事：</p>
+          <div class="spec">
+            <div><b>材質</b><span>霧面玻璃、半透明的層次疊加</span></div>
+            <div><b>光線</b><span>會流動的光、緩緩亮起的畫面</span></div>
+            <div><b>精準度</b><span>線的粗細一致、間距對齊、圓角統一</span></div>
+          </div>
+          <p>這三項都和顏色無關。在維持品牌棕與霧藍灰不變的前提下，從這三件事下手是能做出科技感的最佳選擇，也是這一版的主要著力點。</p>
+        </article>
       </div>
     </div>
   </section>
@@ -345,12 +400,9 @@
           <div>
             <p class="style-item__en">Light That Breathes</p>
             <h3>會呼吸的光</h3>
-            <p>首屏人像沐浴在自然光裡。網頁打開時，畫面從微暗慢慢亮起，主標再緩緩浮現，像一次深呼吸；照片右上角的光源處，有一道持續流動的光帶。整體節奏是放慢的，而不是廣告式的強烈刺激。</p>
-            <ul class="points">
-              <li>光帶的顏色取自照片本身的藍灰與暖白，看起來像照片裡的陽光在動，不像多加一層特效</li>
-              <li>照片 2.4 秒內從暗 40% 漸亮，主標以 1.8 秒淡入上移</li>
-              <li>「AI 醫美問答」按鈕以 3 秒一次的節奏微微發光，提示這是可以放心點的入口</li>
-            </ul>
+            <p>網頁打開的瞬間，照片是暗的，接著在兩秒多內慢慢亮起來，主標題才浮出來。不是一開場就把最亮的畫面砸到眼前，而是讓人先靜下來。</p>
+            <p>照片右上角、也就是陽光的方向，有一道光會很慢地左右移動，像雲飄過時光影的變化。看起來是照片裡的太陽在動，不是外加的特效。</p>
+            <p>「AI 醫美問答」按鈕大約每三秒會微微亮一下，讓人知道這裡可以點。</p>
           </div>
         </div>
 
@@ -359,12 +411,9 @@
           <div>
             <p class="style-item__en">Frosted Glass &amp; Bare Skin</p>
             <h3>霧面玻璃與素顏人像</h3>
-            <p>AI 區塊以不修飾雀斑的素顏人像作底，前方疊一層霧面玻璃卡片：看得見背後的人，卻保有一點距離，呼應「資訊透明，但尊重隱私」。</p>
-            <ul class="points">
-              <li>卡片上方的流動線條，象徵 AI 正在替你整理思緒</li>
-              <li>引導語以打字的方式逐字出現，像有人正在對你說話</li>
-              <li>每次捲回這一區都會重新播放，讓對話感保持新鮮</li>
-            </ul>
+            <p>這一區的底圖是一張沒有修掉雀斑的素顏人像，前面疊一層結了霧的玻璃。你看得見後面的人，但看不清楚細節。</p>
+            <p>選這個材質有兩個原因。一是它正好對應診所的立場：資訊全部攤開，但顧客的隱私留著。二是標誌本身就是這個概念——它是線描的、沒有填色，你可以穿透它看到後面。霧面玻璃是同一件事換成介面的做法。</p>
+            <p>玻璃卡片上方有一條很淡的光線在流動，代表 AI 正在讀你打的字。引導語一個字一個字打出來，像真的有人在跟你說話。</p>
           </div>
         </div>
 
@@ -373,11 +422,9 @@
           <div>
             <p class="style-item__en">Quiet Editorial Layout</p>
             <h3>安靜的編輯式排版</h3>
-            <p>英文用帶人文氣質的 Arsenal、中文用 Noto Sans TC，搭配大量留白與細線分隔，全站只靠兩個主要品牌色撐起來。醫美小學堂採雜誌式的「一則主打＋三則延伸」，影像選用冷灰色調的靜物，不用治療前後的對比照。</p>
-            <ul class="points">
-              <li>標題 48px 細字，卡片主標 18px、標籤 12px，層級分明</li>
-              <li>標籤以細框呈現，方便顧客依關心的問題找文章</li>
-            </ul>
+            <p>英文用 Arsenal、中文用 Noto Sans TC，字都不粗，行距放寬，段落之間留白多。整站幾乎只有棕色和霧藍灰在用，沒有第三個顏色出來搶。</p>
+            <p>醫美小學堂排成雜誌的樣子：一則主打影片放大，旁邊三則文章排小。靜物影像選用冷灰色調，不用治療前後的對比照。分類標籤用細框，不填色。</p>
+            <p>細線分隔和描邊按鈕，用的也是標誌那種只有線、不填色的畫法。</p>
           </div>
         </div>
       </div>
@@ -455,10 +502,10 @@
           <p class="swatch__use">標題與內文</p>
         </div>
         <div class="swatch">
-          <div class="swatch__chip swatch__chip--light" style="background:#EBEBEB"></div>
+          <div class="swatch__chip swatch__chip--light" style="background:#EEECEC"></div>
           <p class="swatch__role">背景色</p>
           <h3>霧灰</h3>
-          <p class="swatch__hex">#EBEBEB</p>
+          <p class="swatch__hex">#EEECEC　主色階 10%</p>
           <p class="swatch__mean">乾淨、不搶戲的留白</p>
           <p class="swatch__use">頁尾與大面積背景</p>
         </div>
@@ -481,10 +528,9 @@
           <p class="ramp__note">醫美小學堂的區塊底色使用輔助色 10%（#F6F8F9），與頁尾的霧灰 #EEECEC 形成一冷一中性的層次。</p>
 
           <div class="callout">
-            <p class="callout__title">關於背景色的媒材調整</p>
-            <p>品牌識別規範的底色為柔米 <span class="mono">#F5F2E5</span>（色相 49°、彩度 6.5%）。該色為印刷媒材所訂，非塗佈紙會吸收部分黃調；但在背光的 sRGB 螢幕上鋪成整頁大面積時，同樣的黃會被放大，與品牌希望傳達的理性感有落差。</p>
-            <p>因此網站端將此色往中性方向調整，採用主色階 10% 的 <span class="mono">#EEECEC</span>。此值彩度僅 0.8%，視覺上已屬中性，但因由品牌棕衍生而來，與主色 <span class="mono">#58453E</span> 並置時不會產生冷灰與暖棕互斥的違和感，同時仍保留在既有 token 系統之內，不需引入系統外的新色。</p>
-            <p class="callout__foot">建議一併回寫至 design token，新增 <span class="mono">color/dark/bg-web</span> 並註明其為螢幕媒材對應色與調整理由，避免品牌手冊與網站實作出現無紀錄的差異。</p>
+            <p class="callout__title">關於底色的調整</p>
+            <p>品牌手冊的底色是柔米色，這個色號是給印刷用的。紙張會吸掉一部分黃，但螢幕是會發光的，同一個顏色鋪滿整頁，在螢幕上會比在紙上更黃、更亮。</p>
+            <p>所以我們把它往中性微調了一階，讓它在螢幕上長時間閱讀更舒服。用的是品牌主色階的 10%，仍然是從品牌棕衍生出來的顏色，沒有引進任何新的色。</p>
           </div>
         </div>
       </div>
@@ -550,8 +596,19 @@
 
       <div class="callout">
         <p class="callout__title">為什麼不建議「一律冷調」</p>
-        <p>高質感並非來自冷色，而是來自色溫一致、光源乾淨與低飽和度。將全站影像統一冷調處理，會使肌膚失去氣色，並使品牌三個關鍵字中的「溫暖」在視覺層失去載體——背景已為中性、主色棕僅出現於文字與小面積元件，若影像再全面冷調，全站將不存在任何暖度。</p>
-        <p class="callout__foot">另建議：醫美小學堂的文章圖多由診所同仁長期自行上稿，不會每張皆經設計端確認。建議另行提供一頁式選圖檢查表，搭配三組正確與錯誤對照範例，並以固定裁切比例、統一卡片留白與圓角維持整齊度——此三者對版面一致性的貢獻高於調色，且不需後製技巧。</p>
+        <p>高質感不是來自冷色，而是來自色溫一致、光源乾淨、飽和度低。如果全站影像都調冷，膚色會發灰，看起來氣色不好。而背景已經是中性、棕色又只用在文字和小地方，影像再全部冷調，整個網站就不剩任何暖度了。</p>
+        <p class="callout__foot">另外，醫美小學堂的文章圖多半由診所同仁自行上稿，不會每張都經過設計端。建議另外給一份一頁的選圖檢查表，附三組對照範例。固定裁切比例、統一卡片留白與圓角，對版面整齊度的幫助其實比調色更大，也不需要修圖技巧。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 結尾說明 ========== -->
+  <section class="section section--tint" id="scope" aria-labelledby="scope-title">
+    <div class="container">
+      <div class="closing">
+        <h2 id="scope-title">關於這份提案的範圍</h2>
+        <p>這份提案呈現的是首頁幾個主要區塊的風格示意，用來確認方向，尚未涵蓋完整網站。</p>
+        <p>下一階段會把品牌的三個輔助圖形導入，用在圖片裁切與功能圖示上。需要先取得向量原始檔，我們不會自行描圖。</p>
       </div>
     </div>
   </section>
