@@ -156,14 +156,15 @@
 
   /* 03 設計策略 */
   .strategy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; }
-  .strategy article { padding: 0 32px; }
+  /* 三欄等高：內容往上排，底部的「吸引客群／帶來的改變／長期價值」用 margin-top: auto 推到底部對齊 */
+  .strategy article { display: flex; flex-direction: column; padding: 0 32px; }
   .strategy article:first-child { padding-left: 0; }
   .strategy article:last-child { padding-right: 0; }
   .strategy article + article { border-left: 1px solid var(--liner); }
-  .strategy__num { margin: 0; font-family: var(--font-en); font-size: 32px; line-height: 1; color: var(--secondary); }
-  .strategy h3 { margin: 20px 0 0; font-size: 20px; font-weight: 500; line-height: 1.5; }
+  .strategy h3 { margin: 0; font-size: 20px; font-weight: 500; line-height: 1.5; }
   .strategy p { margin: 12px 0 0; }
-  .strategy .result { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--liner); font-size: 14px; color: var(--ink-2); }
+  .strategy article > p:not(.result) { margin-bottom: 20px; } /* 內文與底部結論之間至少留 20px */
+  .strategy .result { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--liner); font-size: 14px; color: var(--ink-2); }
   .strategy .result b { color: var(--primary); font-weight: 500; }
 
   /* 04 網站色彩規劃 */
@@ -460,19 +461,16 @@
 
       <div class="strategy">
         <article>
-          <p class="strategy__num">01</p>
           <h3>用「安靜」被記住</h3>
           <p>多數醫美網站充滿折扣、倒數與前後對比圖。上帝視角反其道而行，用柔和的光、素顏人像與大量留白，讓訪客第一眼就感覺被尊重。</p>
           <p class="result"><b>吸引客群</b>　怕被推銷、重視隱私、希望自己做決定的顧客</p>
         </article>
         <article>
-          <p class="strategy__num">02</p>
           <h3>讓 AI 成為第一次諮詢</h3>
           <p>首屏就有「AI 醫美問答」入口，第二屏直接是對話框。顧客可以自己打字，也能點選「法令紋、淚溝」「臉部輪廓」等常見問題，先由 AI 整理需求、療程方向與價格範圍，再安排醫師一對一評估。</p>
           <p class="result"><b>帶來的改變</b>　降低第一次踏進診所的心理門檻</p>
         </article>
         <article>
-          <p class="strategy__num">03</p>
           <h3>先教育，再決定</h3>
           <p>醫美小學堂以影片與文章說明療程的原理、效果與費用，把專業知識公開。顧客理解得越多，越容易信任；這些內容也會隨時間累積，成為診所的搜尋流量與口碑資產。</p>
           <p class="result"><b>長期價值</b>　信任感與可持續累積的內容資產</p>
