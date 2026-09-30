@@ -133,7 +133,9 @@
   .concept__quote strong { font-family: var(--font-en); font-weight: 400; font-size: 24px; display: block; color: var(--primary); }
   .concept p.body { margin: 0; color: var(--ink); }
   .concept p.body + p.body { margin-top: 16px; }
-  .flow { margin: 40px 0 0; padding: 0; list-style: none; counter-reset: flow; }
+  .flow__label { margin-top: 40px; }
+  .flow__intro { margin: 8px 0 0; font-size: 14px; line-height: 1.75; color: var(--ink-2); }
+  .flow { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: flow; }
   .flow li { counter-increment: flow; display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 16px 0; border-top: 1px solid var(--liner); }
   .flow li:last-child { border-bottom: 1px solid var(--liner); }
   .flow li::before { content: counter(flow, decimal-leading-zero); font-family: var(--font-en); font-size: 18px; color: var(--primary-90); line-height: 1.6; }
@@ -380,9 +382,12 @@
         <div>
 
           <p class="body">「上帝視角」想做的，不是製造焦慮的醫美，而是讓人安心做決定的地方。市面上的醫美資訊常常不透明、充滿推銷話術，顧客還沒走進診所，就已經先築起防備。</p>
-          <p class="body">這次官網以「先安心，再變美」為主軸：首屏用一道會呼吸的光迎接訪客；接著由 AI 先聽顧客說自己在意什麼，整理療程方向與價格範圍；醫美小學堂再把常見問題攤開講清楚。網站不催促、不打折扣戰、不放誇大的前後對比，讓顧客照自己的節奏了解，準備好了再走進診間。</p>
+          <p class="body">這次官網以「先安心，再變美」為主軸：不催促、不打折扣戰、不放誇大的前後對比，讓顧客照自己的節奏了解，準備好了再走進診間。從首屏的第一印象、AI 諮詢到衛教內容，每一處都圍繞這個主軸設計。</p>
 
-          <ol class="flow" aria-label="網站瀏覽動線">
+          <p class="concept__label flow__label">本次風格示意的畫面</p>
+          <p class="flow__intro">本報告中的畫面，是從完整首頁中挑出、最能代表這套風格的幾個區塊，用來確認視覺方向。正式首頁會依完整的資訊架構展開，預計還會加入真實分享、問題與療程、關於上帝視角等更多內容，並沿用同一套視覺語言。</p>
+          <!-- 2026-09-30 Sidney：01–04 區塊清單容易讓客戶誤以為首頁只有這幾區，先隱藏；要恢復拿掉 hidden -->
+          <ol class="flow" aria-label="本次風格示意的畫面" hidden>
             <li><div><b>首屏｜被光迎接</b><span>品牌主張與兩個入口：預約醫師諮詢、AI 醫美問答</span></div></li>
             <li><div><b>上帝視角 AI｜先說出在意的地方</b><span>對話框與常見問題標籤，AI 整理需求、療程方向與價格</span></div></li>
             <li><div><b>醫美小學堂｜理解之後再決定</b><span>影片與文章解釋原理、效果與費用</span></div></li>
